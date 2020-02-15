@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
     "strict": true,
+    "strictPropertyInitialization": true,
+    "strictNullChecks": true,
+    "downlevelIteration": true,
     "module": "commonjs",
     "jsx": "preserve",
     "esModuleInterop": true,
