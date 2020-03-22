@@ -10,11 +10,11 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "parcel-bundler": "^1.6.1",
     "@types/jest": "^24.9.1",
     "jest": "^24.9.0",
+    "parcel-bundler": "^1.6.1",
     "ts-jest": "^24.3.0",
-    "typescript": "^3.7.5"
+    "typescript": "^3.8.3"
   },
   "keywords": [
     "typescript",
