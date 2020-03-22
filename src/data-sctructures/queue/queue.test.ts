@@ -69,10 +69,10 @@ describe(Queue, () => {
       expect(queue.length).toBe(2);
       expect(queue.peek(1)).toBe('item')
     });
-    it( 'should return empty array if no item was removed from queue', function () {
+    it( 'should return undefined if no item was removed from queue', function () {
       const { queue } = setup();
       expect(queue.isEmpty).toBe(true);
-      expect(queue.dequeue()).toStrictEqual([]);
+      expect(queue.dequeue()).toStrictEqual(undefined);
     } );
   })
 });
