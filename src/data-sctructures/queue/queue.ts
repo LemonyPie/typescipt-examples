@@ -1,12 +1,17 @@
-export class Queue<T> {
+import { IQueue } from './queue.types';
+
+export class Queue<T> implements IQueue<T> {
   private queue: T[] = [];
 
-  enqueue(item: T): T[] {
+  enqueue(item: T): void {
     this.queue.unshift(item);
-    return this.queue;
   }
 
-  dequeue(item?: T): T[] {
+  dequeue(): T | undefined {
+    return this.queue.pop();
+  }
+
+  abort( item?: T): T[] {
     if (item === undefined) {
       this.queue.pop();
       return this.queue;

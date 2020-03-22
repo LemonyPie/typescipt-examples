@@ -53,7 +53,7 @@ describe(Queue, () => {
       const { queue } = setup();
       expect(queue.isEmpty).toBe(true);
       queue.enqueue('item');
-      queue.dequeue('item');
+      queue.dequeue();
       expect(queue.isEmpty).toBe(true);
       expect(queue.length).toBe(0);
     });
@@ -65,9 +65,14 @@ describe(Queue, () => {
       queue.enqueue('item');
       expect(queue.length).toBe(3);
       expect(queue.peek(1)).toBe('dequeue');
-      queue.dequeue('dequeue');
+      queue.abort('dequeue');
       expect(queue.length).toBe(2);
       expect(queue.peek(1)).toBe('item')
+    });
+    it( 'should return empty array if no item was removed from queue', function () {
+      const { queue } = setup();
+      expect(queue.isEmpty).toBe(true);
+      expect(queue.dequeue()).toStrictEqual([]);
     } );
   })
 });
